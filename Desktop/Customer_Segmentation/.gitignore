@@ -1,8 +1,0 @@
-.venv/
-__pycache__/
-.ipynb_checkpoints/
-.env
-outputs/
-data/
-node_modules/
-.next/
