@@ -1,0 +1,41 @@
+# core
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# visualization
+matplotlib==3.9.2
+seaborn==0.13.2
+umap-learn==0.5.6
+
+# notebooks
+jupyterlab==4.2.5
+ipykernel==6.29.5
+openpyxl==3.1.5
+
+# deep learning
+torch==2.4.1
+
+# experiment tracking
+mlflow==2.16.2
+
+# API and database
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy>=2.0.35,<3
+psycopg2-binary==2.9.9
+pydantic>=2.9,<3
+python-dotenv==1.0.1
+
+# RAG
+sentence-transformers==3.1.1
+pgvector==0.3.5
+mistralai
+
+# agents and guardrails
+langchain
+langchain-core
+langchain-mistralai
+langgraph
