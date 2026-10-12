@@ -1,0 +1,24 @@
+services:
+  db:
+    # pgvector image keeps the RAG extension path open later
+    image: pgvector/pgvector:pg16
+    container_name: retail-postgres
+    environment:
+      POSTGRES_USER: retail
+      POSTGRES_PASSWORD: retail_dev
+      POSTGRES_DB: retail
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # NOTE: ./docker/init-db.sql is kept for reference but not bind-mounted:
+    # Docker Desktop on macOS refuses the host path mount, and the API
+    # creates the table on startup anyway (see backend/src/api/db.py).
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U retail -d retail"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:
